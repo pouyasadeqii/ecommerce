@@ -109,6 +109,7 @@ header {
   height: 100px;
   object-fit: contain;
   padding: 10px;
+  border-radius: 20px;
 }
 .detail-box {
   display: grid;
