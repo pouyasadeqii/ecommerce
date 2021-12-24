@@ -163,6 +163,7 @@ header {
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
+  border-radius: 10px;
 }
 .btn-buy:hover {
   background: var(--text-color);
@@ -195,16 +196,19 @@ header {
 }
 .product-box {
   position: relative;
+  border-radius: 10px;
 }
 .product-box:hover {
   padding: 10px;
   border: 1px solid var(--text-color);
   transition: 0.4s;
+  border-radius: 10px;
 }
 .product-img {
   width: 100%;
   height: auto;
   margin-bottom: 0.5rem;
+  border-radius: 10px;
 }
 .product-title {
   font-size: 1.1rem;
@@ -223,6 +227,7 @@ header {
   color: var(--bg-color);
   padding: 10px;
   cursor: pointer;
+  border-radius: 9px;
 }
 .add-cart:hover {
   background: hsl(249, 32%, 17%);
