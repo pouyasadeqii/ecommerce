@@ -52,6 +52,9 @@ function buyButtonClicked() {
   while (cartContent.hasChildNodes()) {
     cartContent.removeChild(cartContent.firstChild);
   }
+  let count = document.querySelector(".count");
+  count.innerText = 0 ;
+  count.style.display = "none";
   updateTotal();
 }
 
@@ -60,6 +63,13 @@ function removeCartItem(event) {
   let buttonClicked = event.target;
   // console.log(event.target)
   buttonClicked.parentElement.remove();
+  let count = document.querySelector(".count").innerText;
+  let oldCount = parseInt(count);
+  let newCount = oldCount - 1;
+  document.querySelector(".count").innerText = newCount;
+  if (newCount == 0 ) {
+    document.querySelector(".count").style.display = "none"
+  }
   updateTotal();
 }
 
@@ -78,6 +88,14 @@ function addCartClicked(event) {
   let title = shopProducts.getElementsByClassName("product-title")[0].innerText;
   let price = shopProducts.getElementsByClassName("price")[0].innerText;
   let productImg = shopProducts.getElementsByClassName("product-img")[0].src;
+  let count = document.querySelector(".count");
+  count.style.display = "inline-block";
+  let countVal = count.innerText;
+  let oldCount = parseInt(countVal);
+  let newCount = oldCount + 1;
+  document.querySelector(".count").innerText = newCount;
+  
+  
   // console.log(title , price , productImg);
   addProductToCart(title, price, productImg);
   updateTotal();
@@ -90,6 +108,10 @@ function addProductToCart(title, price, productImg) {
   for (let i = 0; i < cartItemsNames.length; i++) {
     if (cartItemsNames[i].innerText == title) {
       alert("You Have Already Add This Item To Cart");
+      let count = document.querySelector(".count").innerText;
+      let oldCount = parseInt(count);
+      let newCount = oldCount - 1;
+      document.querySelector(".count").innerText = newCount;
       return;
     }
   }
