@@ -78,6 +78,7 @@ header {
 #cart-icon {
   font-size: 1.8rem;
   cursor: pointer;
+  position: relative;
 }
 .count {
   display: none;
